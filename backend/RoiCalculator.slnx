@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="RoiCalculator.Api/RoiCalculator.Api.csproj" />
+  <Project Path="RoiCalculator.Core/RoiCalculator.Core.csproj" />
+  <Project Path="RoiCalculator.Infrastructure/RoiCalculator.Infrastructure.csproj" />
+</Solution>

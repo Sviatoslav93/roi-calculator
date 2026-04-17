@@ -1,0 +1,22 @@
+root = true
+
+# common
+[*]
+charset = utf-8
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+
+# Vue & Web Specific (2 spaces is standard for JS/Vue)
+[*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,vue,css,scss,sass,less,styl}]
+indent_size = 2
+max_line_length = 100
+
+# C# Specific (4 spaces is standard for .NET)
+[*.{cs,csx,csproj,sln}]
+indent_size = 4
+
+# Markdown & Docs
+[*.md]
+trim_trailing_whitespace = false

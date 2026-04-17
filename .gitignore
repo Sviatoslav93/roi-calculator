@@ -1,0 +1,54 @@
+# =========================
+# Node / Frontend
+# =========================
+node_modules/
+dist/
+*.local
+.env
+.env.*
+!.env.example
+
+# =========================
+# .NET / Backend
+# =========================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.DotSettings.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+
+# NuGet
+**/packages/*
+*.nupkg
+**/[Pp]ackages/build/
+
+# =========================
+# IDE / Editor
+# =========================
+.idea/
+*.swp
+*.swo
+*~
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
