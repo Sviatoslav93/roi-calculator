@@ -1,4 +1,4 @@
-namespace RoiCalculator.Core.DomainEvents;
+namespace RoiCalculator.Core.Common;
 
 public interface IDomainEvent
 {

@@ -1,4 +1,4 @@
-namespace RoiCalculator.Core.Interfaces;
+namespace RoiCalculator.Core.Common;
 
 public interface IUnitOfWork : IDisposable
 {

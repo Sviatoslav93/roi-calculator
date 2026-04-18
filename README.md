@@ -4,7 +4,7 @@ This app allows you to build and publish your ROI form. Then your clients can us
 
 ## Architecture
 
-```
+```plaintext
 ├── web/          Vue 3 + Vite + TypeScript (frontend)
 └── backend/      .NET 10 (backend)
     ├── RoiCalculator.Api             Minimal API · MediatR · Vertical Slices
@@ -34,5 +34,3 @@ npm run dev
 cd backend
 dotnet run --project RoiCalculator.Api
 ```
-
-> Update the connection string in `backend/RoiCalculator.Api/appsettings.Development.json` to point to your PostgreSQL instance.

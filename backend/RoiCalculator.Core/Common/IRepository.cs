@@ -1,7 +1,6 @@
 using System.Linq.Expressions;
-using RoiCalculator.Core.Entities;
 
-namespace RoiCalculator.Core.Interfaces;
+namespace RoiCalculator.Core.Common;
 
 public interface IRepository<T, TId>
     where T : Entity<TId>

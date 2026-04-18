@@ -1,6 +1,4 @@
-using RoiCalculator.Core.DomainEvents;
-
-namespace RoiCalculator.Core.Entities;
+namespace RoiCalculator.Core.Common;
 
 public abstract class Entity<TId> where TId : notnull
 {
