@@ -2,6 +2,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using RoiCalculator.Api.Behaviors;
+using RoiCalculator.Api.Configuration;
 using RoiCalculator.Core.Aggregates;
 using RoiCalculator.Core.Common;
 using RoiCalculator.Infrastructure.Data;
@@ -30,8 +31,15 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        var features = configuration.GetSection("Features").Get<FeatureFlags>() ?? new FeatureFlags();
+
         services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+        {
+            if (features.UseInMemoryDatabase)
+                options.UseInMemoryDatabase("roi_calculator");
+            else
+                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+        });
 
         services.AddScoped<IRoiFormRepository, RoiFormRepository>();
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<AppDbContext>());
