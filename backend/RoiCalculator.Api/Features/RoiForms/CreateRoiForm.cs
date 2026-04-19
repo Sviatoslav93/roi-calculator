@@ -5,9 +5,9 @@ using RoiCalculator.Core.Common;
 
 namespace RoiCalculator.Api.Features.RoiForms;
 
-public record CreateRoiFormCommand(string Name) : IRequest<RoiFormDto>;
+public record CreateRoiFormRequest(string Name) : IRequest<RoiFormDto>;
 
-public class CreateRoiFormValidator : AbstractValidator<CreateRoiFormCommand>
+public class CreateRoiFormValidator : AbstractValidator<CreateRoiFormRequest>
 {
     public CreateRoiFormValidator()
     {
@@ -16,9 +16,9 @@ public class CreateRoiFormValidator : AbstractValidator<CreateRoiFormCommand>
 }
 
 public class CreateRoiFormHandler(IRoiFormRepository repository, IUnitOfWork unitOfWork)
-    : IRequestHandler<CreateRoiFormCommand, RoiFormDto>
+    : IRequestHandler<CreateRoiFormRequest, RoiFormDto>
 {
-    public async Task<RoiFormDto> Handle(CreateRoiFormCommand request, CancellationToken cancellationToken)
+    public async Task<RoiFormDto> Handle(CreateRoiFormRequest request, CancellationToken cancellationToken)
     {
         var form = RoiForm.Create(request.Name);
         await repository.AddAsync(form, cancellationToken);

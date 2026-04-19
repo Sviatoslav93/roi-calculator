@@ -21,7 +21,7 @@ public static class RoiFormsEndpoints
     }
 
     private static async Task<IResult> Create(
-        CreateRoiFormCommand command,
+        CreateRoiFormRequest command,
         ISender sender,
         CancellationToken cancellationToken)
     {
