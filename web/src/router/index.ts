@@ -5,17 +5,17 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/roi-forms',
+      redirect: '/form-templates',
     },
     {
-      path: '/roi-forms',
-      name: 'roi-forms',
-      component: () => import('../views/RoiFormsView.vue'),
+      path: '/form-templates',
+      name: 'form-templates',
+      component: () => import('../views/FormTemplatesView.vue'),
     },
     {
-      path: '/roi-forms/:id',
-      name: 'roi-form-detail',
-      component: () => import('../views/RoiFormDetailView.vue'),
+      path: '/form-templates/:id',
+      name: 'form-template-detail',
+      component: () => import('../views/FormTemplateDetailView.vue'),
     },
   ],
 })

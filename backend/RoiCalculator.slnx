@@ -1,5 +1,23 @@
 <Solution>
-  <Project Path="RoiCalculator.Api/RoiCalculator.Api.csproj" />
-  <Project Path="RoiCalculator.Core/RoiCalculator.Core.csproj" />
-  <Project Path="RoiCalculator.Infrastructure/RoiCalculator.Infrastructure.csproj" />
+  <Folder Name="/solution-items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Hosting/">
+    <Project Path="src/Hosting/RoiCalculator.AppHost/RoiCalculator.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/RoiFrom/">
+    <Project Path="src/Services/RoiForm/RoiForm.Api/RoiForm.Api.csproj" />
+    <Project Path="src/Services/RoiForm/RoiForm.Application/RoiForm.Application.csproj" />
+    <Project Path="src/Services/RoiForm/RoiForm.Domain/RoiForm.Domain.csproj" />
+    <Project Path="src/Services/RoiForm/RoiForm.Infrastructure/RoiForm.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/RoiForm/">
+    <Project Path="Tests/RoiFrom/RoiCalculator.Core.Tests/RoiCalculator.Core.Tests.csproj" />
+    <Project Path="Tests/RoiFrom/RoiForm.Api.Tests/RoiForm.Api.Tests.csproj" />
+  </Folder>
 </Solution>

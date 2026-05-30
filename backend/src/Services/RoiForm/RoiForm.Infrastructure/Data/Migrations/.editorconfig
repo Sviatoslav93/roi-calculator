@@ -1,0 +1,5 @@
+root = false
+
+# EF Core generates migrations with block-scoped namespaces; suppress the style warning
+[*.cs]
+dotnet_diagnostic.IDE0161.severity = none

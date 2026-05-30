@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="Sviatoslav93.FunctionalPrimitives"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Submissions\"/>
+        <Folder Include="Utils\"/>
+    </ItemGroup>
+
+</Project>

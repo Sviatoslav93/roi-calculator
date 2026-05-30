@@ -6,9 +6,9 @@ import Toast from 'primevue/toast'
 <template>
   <header class="app-header">
     <div class="app-header-inner">
-      <RouterLink to="/roi-forms" class="app-brand">ROI Calculator</RouterLink>
+      <RouterLink to="/form-templates" class="app-brand">ROI Calculator</RouterLink>
       <nav>
-        <RouterLink to="/roi-forms">ROI Forms</RouterLink>
+        <RouterLink to="/form-templates">Form Templates</RouterLink>
       </nav>
     </div>
   </header>

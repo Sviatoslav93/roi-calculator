@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(dotnet test \"d:\\\\projects\\\\roi-calculator\\\\backend\\\\Tests\\\\RoiFrom\\\\RoiForm.Api.Tests\\\\RoiForm.Api.Tests.csproj\" --no-build 2>&1)",
+      "PowerShell(dotnet test \"d:\\\\projects\\\\roi-calculator\\\\backend\\\\Tests\\\\RoiFrom\\\\RoiForm.Api.Tests\\\\RoiForm.Api.Tests.csproj\" 2>&1)"
+    ]
+  }
+}
