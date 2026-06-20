@@ -4,7 +4,6 @@ using RoiForm.Api.Dtos.Requests;
 using RoiForm.Api.Extensions;
 using RoiForm.Application.Features.RoiForms.ChangeStatus;
 using RoiForm.Application.Features.RoiForms.Find;
-using RoiForm.Application.Features.RoiForms.List;
 
 namespace RoiForm.Api.Endpoints;
 
@@ -27,7 +26,7 @@ public static class FormTemplatesEndpoints
         ISender sender,
         CancellationToken cancellationToken)
     {
-        return sender.Send(request.ToCommand(), cancellationToken)
+        return sender.Send(request.ToCreateFormTemplateCommand(), cancellationToken)
             .ToHttpResultAsync(id => Results.Created($"/form-templates/{id}", id));
     }
 
@@ -57,7 +56,7 @@ public static class FormTemplatesEndpoints
         ISender sender,
         CancellationToken cancellationToken)
     {
-        return sender.Send(request.ToCommand(id), cancellationToken)
+        return sender.Send(request.ToUpdateFormTemplateCommand(id), cancellationToken)
             .ToHttpResultAsync();
     }
 
@@ -67,7 +66,7 @@ public static class FormTemplatesEndpoints
         ISender sender,
         CancellationToken cancellationToken)
     {
-        return sender.Send(request.ToCommand(id), cancellationToken)
+        return sender.Send(request.ToRenameFormTemplateCommand(id), cancellationToken)
             .ToHttpResultAsync();
     }
 

@@ -8,7 +8,7 @@ using RoiForm.Application;
 using RoiForm.Application.Features.RoiForms.Abstractions;
 using RoiForm.Api.Behaviors;
 using RoiForm.Api.Configuration;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement;
 using RoiForm.Infrastructure.Data;
 using RoiForm.Infrastructure.Data.Queries;

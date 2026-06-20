@@ -1,6 +1,6 @@
 using FunctionalPrimitives.Monads.Results;
 using MediatR;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement;
 
 namespace RoiForm.Application.Features.RoiForms.Rename;

@@ -28,7 +28,7 @@ public class UpdateFormFieldRequest
 
 public static class UpdateFormTemplateMapper
 {
-    public static UpdateFormTemplateCommand ToCommand(this UpdateFormTemplateRequest request, Guid id)
+    public static UpdateFormTemplateCommand ToUpdateFormTemplateCommand(this UpdateFormTemplateRequest request, Guid id)
         => new(
             id,
             request.Title,

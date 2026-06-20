@@ -5,6 +5,9 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Folder Name="/src/" />
+  <Folder Name="/src/Common/">
+    <Project Path="src/Common/Domain.Common/Domain.Common.csproj" />
+  </Folder>
   <Folder Name="/src/Hosting/">
     <Project Path="src/Hosting/RoiCalculator.AppHost/RoiCalculator.AppHost.csproj" />
   </Folder>

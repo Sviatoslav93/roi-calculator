@@ -8,4 +8,4 @@ builder.AddProject<Projects.RoiForm_Api>("roi-form-api")
     .WaitFor(postgres)
     .WithEnvironment("Features__UseInMemoryDatabase", "false");
 
-builder.Build().Run();
+await builder.Build().RunAsync();

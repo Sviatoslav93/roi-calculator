@@ -52,7 +52,7 @@ public sealed class CreateFormFieldRequest
 
 public static class CreateFormTemplateRequestMapper
 {
-    public static CreateFormTemplateCommand ToCommand(this CreateFormTemplateRequest request)
+    public static CreateFormTemplateCommand ToCreateFormTemplateCommand(this CreateFormTemplateRequest request)
         => new(
             request.Name,
             request.Title,

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement.Entities;
 
 namespace RoiForm.Infrastructure.Data;

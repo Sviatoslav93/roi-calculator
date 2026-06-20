@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using FunctionalPrimitives.Monads.Results;
 using FunctionalPrimitives.Monads.Results.Extensions;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement.Errors;
 using RoiForm.Domain.FormManagement.Utils;
 

@@ -1,4 +1,4 @@
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement.Entities;
 
 namespace RoiForm.Domain.FormManagement;

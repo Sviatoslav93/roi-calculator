@@ -24,6 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\..\Common\Domain.Common\Domain.Common.csproj" />
         <ProjectReference Include="..\RoiForm.Application\RoiForm.Application.csproj" />
         <ProjectReference Include="..\RoiForm.Domain\RoiForm.Domain.csproj" />
         <ProjectReference Include="..\RoiForm.Infrastructure\RoiForm.Infrastructure.csproj" />

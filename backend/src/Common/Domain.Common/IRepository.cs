@@ -1,6 +1,6 @@
 using System.Linq.Expressions;
 
-namespace RoiForm.Domain.Common;
+namespace Domain.Common;
 
 public interface IRepository<T, in TId>
     where T : Entity<TId>

@@ -9,6 +9,6 @@ public class RenameFormTemplateRequest
 
 public static class RenameFormTemplateMapper
 {
-    public static RenameFormTemplateCommand ToCommand(this RenameFormTemplateRequest request, Guid id)
+    public static RenameFormTemplateCommand ToRenameFormTemplateCommand(this RenameFormTemplateRequest request, Guid id)
         => new(id, request.Name);
 }

@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Domain.Common\Domain.Common.csproj" />
     <ProjectReference Include="..\RoiForm.Domain\RoiForm.Domain.csproj" />
     <ProjectReference Include="..\RoiForm.Application\RoiForm.Application.csproj" />
   </ItemGroup>

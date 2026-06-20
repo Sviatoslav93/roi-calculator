@@ -1,6 +1,6 @@
 using FunctionalPrimitives.Monads.Results;
 using FunctionalPrimitives.Monads.Results.Extensions;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement.Enums;
 using RoiForm.Domain.FormManagement.Errors;
 
@@ -26,15 +26,14 @@ public class FormField : Entity<Guid>
 
     public static Result<FormField> Create(string identifier, string label, FormFieldType type, decimal? min = null, decimal? max = null)
     {
-        if (min.HasValue && max.HasValue && min > max)
-            return FormManagementErrors.FieldMinCannotExceedMax();
-
-        return from i in identifier
-                    .Ensure(x => !string.IsNullOrEmpty(x), FormManagementErrors.FieldIdentifierCannotBeEmpty())
-                    .Ensure(x => x.Length <= 200, FormManagementErrors.FieldIdentifierTooLong())
-               from l in label
-                    .Ensure(x => !string.IsNullOrEmpty(x), FormManagementErrors.FieldLabelCannotBeEmpty())
-                    .Ensure(x => x.Length <= 200, FormManagementErrors.FieldLabelTooLong())
-               select new FormField(i, l, type, min, max);
+        return min > max
+            ? FormManagementErrors.FieldMinCannotExceedMax()
+            : from i in identifier
+                .Ensure(x => !string.IsNullOrEmpty(x), FormManagementErrors.FieldIdentifierCannotBeEmpty())
+                .Ensure(x => x.Length <= 200, FormManagementErrors.FieldIdentifierTooLong())
+            from l in label
+                .Ensure(x => !string.IsNullOrEmpty(x), FormManagementErrors.FieldLabelCannotBeEmpty())
+                .Ensure(x => x.Length <= 200, FormManagementErrors.FieldLabelTooLong())
+            select new FormField(i, l, type, min, max);
     }
 }

@@ -1,4 +1,4 @@
-namespace RoiForm.Domain.Common;
+namespace Domain.Common;
 
 public interface IDomainEvent
 {

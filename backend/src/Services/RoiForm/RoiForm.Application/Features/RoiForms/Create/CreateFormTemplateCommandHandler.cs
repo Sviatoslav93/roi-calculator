@@ -1,7 +1,7 @@
 using FunctionalPrimitives.Monads.Results;
 using MediatR;
 using RoiForm.Application.Features.RoiForms;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement;
 using RoiForm.Domain.FormManagement.Entities;
 using RoiForm.Domain.FormManagement.ValueObjects;

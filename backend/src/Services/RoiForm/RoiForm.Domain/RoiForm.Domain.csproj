@@ -5,8 +5,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Submissions\"/>
-        <Folder Include="Utils\"/>
+        <ProjectReference Include="..\..\..\Common\Domain.Common\Domain.Common.csproj" />
     </ItemGroup>
 
 </Project>

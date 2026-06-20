@@ -1,6 +1,6 @@
 using FunctionalPrimitives.Monads.Results;
 using FunctionalPrimitives.Monads.Results.Extensions;
-using RoiForm.Domain.Common;
+using Domain.Common;
 using RoiForm.Domain.FormManagement.Enums;
 using RoiForm.Domain.FormManagement.Errors;
 using RoiForm.Domain.FormManagement.ValueObjects;
@@ -14,7 +14,6 @@ public sealed class FormTemplate : AggregateRoot<Guid>, IAudit
     // For EF Core
     private FormTemplate()
     {
-
     }
 
     private FormTemplate(
@@ -47,6 +46,7 @@ public sealed class FormTemplate : AggregateRoot<Guid>, IAudit
         Formula formula,
         IEnumerable<FormField> fields)
     {
+        var fieldsArr = fields.ToArray();
         foreach (var token in formula.PostfixNotation)
         {
             if (token.Type != TokenType.Identifier)
@@ -54,7 +54,7 @@ public sealed class FormTemplate : AggregateRoot<Guid>, IAudit
                 continue;
             }
 
-            if (!fields.Any(x => x.Identifier == token.Value))
+            if (!fieldsArr.Any(x => string.Equals(x.Identifier, token.Value, StringComparison.Ordinal)))
             {
                 // return FormManagementErrors.InvalidFormulaIdentifier(token.Value);
             }
@@ -67,8 +67,8 @@ public sealed class FormTemplate : AggregateRoot<Guid>, IAudit
             from t in title
                 .Ensure(x => !string.IsNullOrEmpty(x), FormManagementErrors.TitleCannotBeEmpty())
                 .Ensure(x => x.Length <= 200, FormManagementErrors.TitleTooLong())
-            from f in fields
-                .Ensure(x => x.Any(), FormManagementErrors.FieldsCannotBeEmpty())
+            from f in fieldsArr
+                .Ensure(x => x.Length != 0, FormManagementErrors.FieldsCannotBeEmpty())
             select new FormTemplate(n, t, RoiFormStatus.Draft, formula, [.. f]);
     }
 
