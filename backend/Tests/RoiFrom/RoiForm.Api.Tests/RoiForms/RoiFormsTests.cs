@@ -128,7 +128,7 @@ public class RoiFormsTests(RoiCalculatorFactory factory) : IClassFixture<RoiCalc
     {
         var id = await CreateFormAndGetId();
 
-        var response = await _client.PatchAsJsonAsync($"/form-templates/{id}/status", new { status = "Published" });
+        var response = await _client.PatchAsJsonAsync($"/form-templates/{id}/templateStatus", new { status = "Published" });
 
         response.StatusCode.Should().Be(HttpStatusCode.OK);
     }
@@ -137,9 +137,9 @@ public class RoiFormsTests(RoiCalculatorFactory factory) : IClassFixture<RoiCalc
     public async Task ChangeStatus_InvalidTransition_Returns4xx()
     {
         var id = await CreateFormAndGetId();
-        await _client.PatchAsJsonAsync($"/form-templates/{id}/status", new { status = "Published" });
+        await _client.PatchAsJsonAsync($"/form-templates/{id}/templateStatus", new { status = "Published" });
 
-        var response = await _client.PatchAsJsonAsync($"/form-templates/{id}/status", new { status = "Published" });
+        var response = await _client.PatchAsJsonAsync($"/form-templates/{id}/templateStatus", new { status = "Published" });
 
         ((int)response.StatusCode).Should().BeGreaterThanOrEqualTo(400);
     }

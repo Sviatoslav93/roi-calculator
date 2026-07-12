@@ -35,12 +35,12 @@ namespace RoiForm.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Key")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
 
-                    b.Property<int>("Status")
+                    b.Property<int>("TemplateStatus")
                         .HasColumnType("integer");
 
                     b.Property<string>("Title")
@@ -56,7 +56,7 @@ namespace RoiForm.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Name")
+                    b.HasIndex("Key")
                         .IsUnique();
 
                     b.ToTable("roi_form_templates", (string)null);
@@ -94,7 +94,7 @@ namespace RoiForm.Infrastructure.Data.Migrations
                                 .ValueGeneratedOnAdd()
                                 .HasColumnType("uuid");
 
-                            b1.Property<string>("Identifier")
+                            b1.Property<string>("Key")
                                 .IsRequired()
                                 .HasMaxLength(200)
                                 .HasColumnType("character varying(200)");

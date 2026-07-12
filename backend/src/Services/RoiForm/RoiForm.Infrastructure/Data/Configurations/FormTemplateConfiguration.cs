@@ -15,18 +15,18 @@ public class FormTemplateConfiguration : IEntityTypeConfiguration<FormTemplate>
 
         builder.HasKey(x => x.Id);
 
-        builder.Property(x => x.Name)
+        builder.Property(x => x.Key)
             .IsRequired()
             .HasMaxLength(200);
 
-        builder.HasIndex(x => x.Name)
+        builder.HasIndex(x => x.Key)
             .IsUnique();
 
         builder.Property(x => x.Title)
             .IsRequired()
             .HasMaxLength(200);
 
-        builder.Property(x => x.Status)
+        builder.Property(x => x.TemplateStatus)
             .IsRequired()
             .HasConversion<int>();
 
@@ -43,7 +43,7 @@ public class FormTemplateConfiguration : IEntityTypeConfiguration<FormTemplate>
 
             fb.Ignore(f => f.DomainEvents);
 
-            fb.Property(f => f.Identifier).IsRequired().HasMaxLength(200);
+            fb.Property(f => f.Key).IsRequired().HasMaxLength(200);
             fb.Property(f => f.Label).IsRequired().HasMaxLength(200);
             fb.Property(f => f.IsRequired).IsRequired();
             fb.Property(f => f.Type).IsRequired().HasConversion<int>();

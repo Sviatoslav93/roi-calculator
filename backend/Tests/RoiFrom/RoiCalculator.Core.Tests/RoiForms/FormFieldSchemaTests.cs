@@ -11,7 +11,7 @@ public class FormFieldSchemaTests
         var result = FormField.Create("revenue", "Revenue", FormFieldType.Number);
 
         result.IsSuccess.Should().BeTrue();
-        result.Value.Identifier.Should().Be("revenue");
+        result.Value.Key.Should().Be("revenue");
         result.Value.Label.Should().Be("Revenue");
     }
 

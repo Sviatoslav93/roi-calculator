@@ -6,10 +6,10 @@ namespace RoiForm.Domain.FormManagement.Errors;
 public static class FormManagementErrors
 {
     public static Error NameCannotBeEmpty() =>
-        new ValidationError("Name cannot be empty", "roi-form.name-cannot-be-empty");
+        new ValidationError("Key cannot be empty", "roi-form.name-cannot-be-empty");
 
     public static Error NameTooLong() =>
-        new ValidationError("Name cannot exceed 200 characters", "roi-form.name-too-long");
+        new ValidationError("Key cannot exceed 200 characters", "roi-form.name-too-long");
 
     public static Error TitleCannotBeEmpty() =>
         new ValidationError("Title cannot be empty", "roi-form.title-cannot-be-empty");
@@ -20,19 +20,19 @@ public static class FormManagementErrors
     public static Error FieldsCannotBeEmpty() =>
         new ValidationError("Form must have at least one field", "roi-form.fields-cannot-be-empty");
 
-    public static Error CannotPublish(RoiFormStatus currentStatus) =>
+    public static Error CannotPublish(FormTemplateStatus currentTemplateStatus) =>
         new InvalidStateError(
-            $"Cannot publish a form with status '{currentStatus}'. Only Draft forms can be published.",
+            $"Cannot publish a form with templateStatus '{currentTemplateStatus}'. Only Draft forms can be published.",
             "roi-form.cannot-publish");
 
-    public static Error CannotUnpublish(RoiFormStatus currentStatus) =>
+    public static Error CannotUnpublish(FormTemplateStatus currentTemplateStatus) =>
         new InvalidStateError(
-            $"Cannot unpublish a form with status '{currentStatus}'. Only Published forms can be unpublished.",
+            $"Cannot unpublish a form with templateStatus '{currentTemplateStatus}'. Only Published forms can be unpublished.",
             "roi-form.cannot-unpublish");
 
-    public static Error CannotArchive(RoiFormStatus currentStatus) =>
+    public static Error CannotArchive(FormTemplateStatus currentTemplateStatus) =>
         new InvalidStateError(
-            $"Cannot archive a form with status '{currentStatus}'. Only Published forms can be archived.",
+            $"Cannot archive a form with templateStatus '{currentTemplateStatus}'. Only Published forms can be archived.",
             "roi-form.cannot-archive");
 
     public static Error FieldIdentifierCannotBeEmpty() =>

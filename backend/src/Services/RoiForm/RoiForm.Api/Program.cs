@@ -52,7 +52,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
-app.MapFormTemplateEndpoints();
+// app.MapFormTemplateEndpoints();
 
 app.MapHealthChecks("/health", new HealthCheckOptions
 {

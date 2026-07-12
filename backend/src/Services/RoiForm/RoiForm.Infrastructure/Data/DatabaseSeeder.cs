@@ -42,7 +42,7 @@ public class DatabaseSeeder(AppDbContext context)
             [
                 ("avg_purchase", "Avg Purchase Value"),
                 ("frequency", "Purchase Frequency"),
-                ("lifetime", "Customer Lifetime")
+                ("lifetime", "Customer Lifetime"),
             ]);
     }
 
@@ -54,7 +54,7 @@ public class DatabaseSeeder(AppDbContext context)
     {
         var formula = Formula.Create(expression).Value;
         var fields = fieldDefs
-            .Select(f => FormField.Create(f.key, f.label, FormFieldType.Number).Value)
+            .Select(f => FormField.Create(f.key, f.label, true, FormFieldType.Number).Value)
             .ToList();
 
         return FormTemplate.Create(name, title, formula, fields).Value;

@@ -1,5 +1,5 @@
 using FluentValidation;
-using RoiForm.Api.Dtos.Requests;
+using RoiForm.Api.Endpoints.FormTemplates.Create;
 
 namespace RoiForm.Api.Validators;
 

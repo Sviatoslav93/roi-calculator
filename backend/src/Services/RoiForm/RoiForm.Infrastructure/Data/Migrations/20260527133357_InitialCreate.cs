@@ -60,7 +60,7 @@ namespace RoiForm.Infrastructure.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_roi_form_templates_Name",
                 table: "roi_form_templates",
-                column: "Name",
+                column: "Key",
                 unique: true);
         }
 

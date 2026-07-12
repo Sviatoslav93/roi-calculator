@@ -5,13 +5,14 @@ using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using RoiForm.Application;
-using RoiForm.Application.Features.RoiForms.Abstractions;
 using RoiForm.Api.Behaviors;
 using RoiForm.Api.Configuration;
 using Domain.Common;
+using RoiForm.Application.Features.FormTemplates.List;
 using RoiForm.Domain.FormManagement;
 using RoiForm.Infrastructure.Data;
 using RoiForm.Infrastructure.Data.Queries;
+using RoiForm.Infrastructure.Data.Queries.FormTemplates;
 using RoiForm.Infrastructure.Repositories;
 
 namespace RoiForm.Api.Extensions;
@@ -45,22 +46,12 @@ public static class ServiceCollectionExtensions
 
             services.AddDbContext<AppDbContext>(options =>
             {
-                if (features.UseInMemoryDatabase)
-                    options.UseInMemoryDatabase("roi_calculator");
-                else
-                    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
             });
 
-            if (features.UseInMemoryDatabase)
-            {
-                services.AddScoped<IFormTemplateReadQueries, EfCoreFormTemplateReadQueries>();
-            }
-            else
-            {
-                var connStr = configuration.GetConnectionString("DefaultConnection")!;
-                services.AddSingleton<IDbConnectionFactory>(new NpgsqlConnectionFactory(connStr));
-                services.AddScoped<IFormTemplateReadQueries, DapperFormTemplateReadQueries>();
-            }
+            var connStr = configuration.GetConnectionString("DefaultConnection")!;
+            services.AddSingleton<IDbConnectionFactory>(new NpgsqlConnectionFactory(connStr));
+            services.AddScoped<IListFormTemplatesReader, ListFormTemplatesReader>();
 
             services.AddScoped<IFormTemplateRepository, FormTemplateRepository>();
             services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<AppDbContext>());

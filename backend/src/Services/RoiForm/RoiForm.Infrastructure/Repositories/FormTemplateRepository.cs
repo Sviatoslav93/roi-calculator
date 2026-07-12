@@ -46,6 +46,6 @@ public class FormTemplateRepository(AppDbContext context) : IFormTemplateReposit
     public async Task<bool> ExistsWithNameAsync(string name, Guid? excludeId = null, CancellationToken cancellationToken = default)
     {
         return await context.FormTemplates
-            .AnyAsync(x => x.Name == name && (excludeId == null || x.Id != excludeId), cancellationToken);
+            .AnyAsync(x => x.Key == name && (excludeId == null || x.Id != excludeId), cancellationToken);
     }
 }
