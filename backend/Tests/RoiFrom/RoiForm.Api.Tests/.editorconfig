@@ -1,0 +1,5 @@
+root = false
+
+# Test methods use xUnit underscore naming convention (e.g. Method_Scenario_Expected)
+[*.cs]
+dotnet_diagnostic.CA1707.severity = none

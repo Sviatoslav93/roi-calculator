@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="Sviatoslav93.FunctionalPrimitives"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Common\Domain.Common\Domain.Common.csproj" />
+    </ItemGroup>
+
+</Project>

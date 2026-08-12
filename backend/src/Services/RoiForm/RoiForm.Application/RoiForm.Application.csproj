@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="MediatR" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+        <PackageReference Include="Sviatoslav93.FunctionalPrimitives" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Common\Domain.Common\Domain.Common.csproj" />
+        <ProjectReference Include="..\RoiForm.Domain\RoiForm.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
